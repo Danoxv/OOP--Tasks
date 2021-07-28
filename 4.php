@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Обращение к свойствам класса через $this
  * Запись свойств
@@ -7,8 +8,8 @@
 
 // Задача 4.1
 // Сделайте класс Employee (работник), в котором будут следующие свойства - name (имя), age (возраст), salary (зарплата).
-class Employee
-{
+class Employee {
+
     public string $name;
     public int $age;
     public int $salary;
@@ -49,6 +50,7 @@ class Employee
     {
         $this->salary *= 2;
     }
+
 }
 
 // Задача 4.6
@@ -68,7 +70,7 @@ echo sprintf('Сумма зарплат: %d', $emp1->getSalary() + $emp2->getSal
 
 // Задача 4.7
 // Сделайте класс User, в котором будут следующие свойства - name (имя), age (возраст).
-class User
+class User 
 {
     public string $name;
     public int $age;
@@ -81,7 +83,7 @@ class User
         // Модифицируйте метод setAge так, чтобы он вначале проверял, что переданный возраст больше или равен 18.
         // Если это так - пусть метод меняет возраст пользователя, а если не так - то ничего не делает.
         if ($age > 18) {
-            $this->age = $age;
+           return  $this->age = $age;
         }
     }
 }
@@ -99,7 +101,7 @@ echo $user->age;
 
 // Задача 4.12
 // Сделайте класс Rectangle (прямоугольник), в котором в свойствах будут записаны ширина и высота.
-class Rectangle
+class Rectangle 
 {
     public int $width;
     public int $height;
@@ -113,7 +115,7 @@ class Rectangle
 
     // Задача 4.14
     // В классе Rectangle сделайте метод getPerimeter, который будет возвращать периметр этого прямоугольника.
-    public function getPerimeter()
+    public function getPerimeter():int
     {
         return 2 * ($this->width + $this->height);
     }
