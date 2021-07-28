@@ -46,7 +46,7 @@ class Employee {
     // Задача 4.11
     // Сделайте класс Employee (работник), в котором будут следующие свойства - name (имя), salary (зарплата).
     // Сделайте метод doubleSalary, который текущую зарплату будет увеличивать в 2 раза.
-    public function doubleSalary()
+    public function doubleSalary(): void
     {
         $this->salary *= 2;
     }
