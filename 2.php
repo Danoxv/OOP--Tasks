@@ -7,11 +7,12 @@
 
 // Задача 2.1
 // Сделайте класс Employee (работник), в котором будут следующие свойства - name (имя), age (возраст), salary (зарплата).
-class Employee
-{
+class Employee {
+
     public string $name;
-    public int  $age;
+    public int $age;
     public int $salary;
+
 }
 
 // Задача 2.2
