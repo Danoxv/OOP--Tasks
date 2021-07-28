@@ -10,7 +10,7 @@
 class Employee
 {
     public string $name;
-    public  $age;
+    public int  $age;
     public int $salary;
 }
 
