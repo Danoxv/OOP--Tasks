@@ -1,8 +1,12 @@
 <?php
-class Employee {
 
-    public $name;
-    public $population;
+//Задача 11.1
+//Сделайте класс City (город), в котором будут следующие свойства: name (название города), population (количество населения).
+        
+class City {
+
+    public string $name;
+    public int|float $population;
 
     public function __construct($name, $population)
     {
@@ -11,9 +15,7 @@ class Employee {
     }
 
 }
-$arr = [new Employee('belgorod', '1mln'),
- new Employee ('kharkov', '1.5mln')
-];
+$arr = [new City('belgorod', 1),new City ('kharkov',)];
 foreach ($arr as $value) {
  echo $value->name . $value->population ;
 }
