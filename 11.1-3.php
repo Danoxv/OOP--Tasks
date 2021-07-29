@@ -16,7 +16,7 @@ class City {
 
 }
 
-$arr = [new City('belgorod', 1), new City('kharkov',)];
+$arr = [new City('belgorod', 1), new City('kharkov', 2)];
 foreach ($arr as $value) {
     echo $value->name . $value->population;
 }
