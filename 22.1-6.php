@@ -65,10 +65,10 @@ class User {
 
     private string $name;
     private string $surname;
-    private  $birthday;
+    private string  $birthday;
     private int $age;
 
-    public function __construct(string $name, string $surname, $birthday)
+    public function __construct(string $name, string $surname, string $birthday)
     {
         $this->name = $name;
         $this->surname = $surname;
