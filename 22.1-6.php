@@ -77,7 +77,7 @@ class User {
         $this->age = $this->calculateAge($birthday);
     }
 
-    private function calculateAge($dt): int
+    private function calculateAge(string $dt): int
     {
         $origin = new DateTime($dt);
         $target = new DateTime(date("Ymd"));
