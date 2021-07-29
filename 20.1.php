@@ -2,53 +2,83 @@
 
 class User {
 
-    private $name;
-    protected $age; // объявим свойство как protected
+    /**
+     * 
+     * @var string
+     */
+    private string $name;
 
-    public function getName()
+    /**
+     * 
+     * @var int
+     */
+    protected int $age; // объявим свойство как protected
+
+    /**
+     * 
+     * @return string
+     */
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function setName($name)
+    /**
+     * 
+     * @param string $name
+     */
+    public function setName(string $name)
     {
         $this->name = $name;
     }
 
-    public function getAge()
+    public function getAge(): int
     {
         return $this->age;
     }
 
-    public function setAge($age)
+    public function setAge(int $age)
     {
         $this->age = $age;
     }
 
 }
+
 class Student extends User {
-    protected $course;
-    
-    public function setCourse($int)
+
+    /**
+     * 
+     * @var int
+     */
+    protected int $course;
+
+    /**
+     * 
+     * @param int $int
+     */
+    public function setCourse(int $int)
     {
         $this->course = $int;
     }
-    public function getCourse()
+
+    public function getCourse(): int
     {
         return $this->course;
     }
+
     public function addOneYear()
     {
-         $this->age++;
+        $this->age++;
     }
-    
+
 }
+
 $student = new Student();
-	
-	$student->setName('Коля'); // установим имя
-	$student->setCourse(3); // установим курс
-	$student->setAge(25); // установим возраст в 25
-	
-	$student->addOneYear(); // увеличим возраст на единицу
-	echo $student->getAge(); //!! выведет 26
-//        ?>
+
+$student->setName('Коля'); // установим имя
+$student->setCourse(3); // установим курс
+$student->setAge(25); // установим возраст в 25
+
+$student->addOneYear(); // увеличим возраст на единицу
+echo $student->getAge(); //!! выведет 26
+?>
