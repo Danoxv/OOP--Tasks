@@ -2,21 +2,21 @@
 
 class User {
 
-    private $name;
-    private $age;
+    private string  $name;
+    private int  $age;
 
-    public function __construct($name, $age)
+    public function __construct(string $name, int $age)
     {
         $this->name = $name;
         $this->age = $age;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getAge()
+    public function getAge():int
     {
         return $this->age;
     }
