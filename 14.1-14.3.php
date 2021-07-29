@@ -7,9 +7,9 @@
 
 class City {
 
-    public string $name;
-    public DateTime $foundation;
-    public int $population;
+    private string $name;
+    private DateTime $foundation;
+    private int $population;
 
     public function __construct(string $name, DateTime $foundation, int $population)
     {
@@ -19,22 +19,51 @@ class City {
         $this->population = $population;
     }
 
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $format
+     * @return string
+     */
+    public function getFoundation(string $format = 'Y-m-d'): string
+    {
+        return $this->foundation->format($format);
+    }
+
+    /**
+     * @return int
+     */
+    public function getPopulation(): int
+    {
+        return $this->population;
+    }
+
 }
 
-$arr = new City('dsfgdf', '1996-08-03', 23);
+$arr = new City('dsfgdf', new DateTime('2008-06-30'), 23);
 $props = ['name', 'foundation', 'population'];
 
 foreach ($props as $value) {
-    echo $arr->$value . '<br/>';
+    $getprop = 'get' . ucfirst($value);
+    echo $arr->$getprop();
+    echo '<br />';
 }
+
+echo '<br/>';
 
 class User {
 
-    public $surname; // фамилия
-    public $name; // имя
-    public $patronymic; // отчество
+    public string $surname; // фамилия
+    public string $name; // имя
+    public string $patronymic; // отчество
 
-    public function __construct($surname, $name, $patronymic)
+    public function __construct(string $surname, string $name, string $patronymic)
     {
         $this->surname = $surname;
         $this->name = $name;
@@ -45,6 +74,8 @@ class User {
 
 $user = new User('иванов', 'иван', 'иванович ');
 $props = ['surname', 'name', 'patronymic'];
-echo $user->{$props[1]};
-echo $user->{$props[2]};
-?>
+
+foreach ($props as $prop) {
+
+    echo $user->{$prop} . '<br/>';
+}
