@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Конструктор объекта
  * http://code.mu/ru/php/book/oop/constructor/
@@ -7,8 +8,8 @@
 // Задача 7.1
 // Сделайте класс Employee, в котором будут следующие публичные свойства - name (имя), age (возраст), salary (зарплата).
 // Сделайте так, чтобы эти свойства заполнялись в методе __construct при создании объекта.
-class Employee
-{
+class Employee {
+
     private string $name;
     private int $age;
     private int $salary;
@@ -24,6 +25,7 @@ class Employee
     {
         return $this->salary;
     }
+
 }
 
 // Задача 7.2
