@@ -2,21 +2,28 @@
 
 class User {
 
-    private $name;
-    private $age;
+    private string $name;
+    private int $age;
 
-    public function __construct($name, $age)
+    public function __construct(string $name, int $age)
     {
         $this->name = $name;
         $this->age = $age;
     }
 
-    public function getName()
+    /**
+     * 
+     * @return string
+     */
+    public function getName(): string
     {
         return $this->name;
     }
-
-    public function getAge()
+/**
+ * 
+ * @return int
+ */
+    public function getAge(): int
     {
         return $this->age;
     }
@@ -25,21 +32,27 @@ class User {
 
 class Employee {
 
-    private $name;
-    private $salary;
+    private string $name;
+    private int $salary;
 
-    public function __construct($name, $salary)
+    public function __construct(string $name, int $salary)
     {
         $this->name = $name;
         $this->salary = $salary;
     }
-
-    public function getName()
+/**
+ * 
+ * @return string
+ */
+    public function getName(): string
     {
         return $this->name;
     }
-
-    public function getSalary()
+/**
+ * 
+ * @return int
+ */
+    public function getSalary(): int
     {
         return $this->salary;
     }
@@ -48,22 +61,23 @@ class Employee {
 
 class EmployeesCollection {
 
-    private $employees = [];
-
-    public function add($newEmployee)
+    private array $employees = [];
+    
+    public function add(object $newEmployee)
     {
-        
-        if(!in_array($newEmployee, $this->employees,true))
-        {
+
+        if (!in_array($newEmployee, $this->employees, true)) {
             $this->employees[] = $newEmployee;
         }
     }
-
-    public function get()
+/**
+ * 
+ * @return array
+ */
+    public function get():array
     {
         return $this->employees;
     }
-
 
 }
 
@@ -84,22 +98,23 @@ function compare2($obj, $obj1)
         return 'false';
     }
 }
-    function compare3($obj, $obj1)
-    {
-        if ($obj === $obj1) {
-            return '1';
-        } elseif ($obj == $obj1) {
-            return '0';
-        } else {
-            return '-1';
-        }
-    }
 
-    $user1 = new User('Коля', 30);
-    $user2 = $user1;
-    echo compare($user1, $user2);
-    $employeesCollection = new EmployeesCollection;
-$employeesCollection->add(new User('Витя',40));
+function compare3($obj, $obj1)
+{
+    if ($obj === $obj1) {
+        return '1';
+    } elseif ($obj == $obj1) {
+        return '0';
+    } else {
+        return '-1';
+    }
+}
+
+$user1 = new User('Коля', 30);
+$user2 = $user1;
+echo compare($user1, $user2);
+$employeesCollection = new EmployeesCollection;
+$employeesCollection->add(new User('Витя', 40));
 var_dump($employeesCollection->get());
-    echo compare(new User('Коля', 30), new User('Коля', 30));
+echo compare(new User('Коля', 30), new User('Коля', 30));
 ?>
