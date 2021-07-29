@@ -2,27 +2,44 @@
 
 class User {
 
-    private $name;
-    protected $age; // изменим модификатор доступа на protected
+    private string $name;
+    protected int $age; // изменим модификатор доступа на protected
 
-    public function getName()
+    /**
+     * 
+     * @return string
+     */
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function setName($name)
+    /**
+     * 
+     * @param string $name
+     * @return void
+     */
+    public function setName(string $name): void
     {
         if (iconv_strlen($name) > 3) {
             $this->name = $name;
         }
     }
 
-    public function getAge()
+    /**
+     * 
+     * @return int
+     */
+    public function getAge(): int
     {
         return $this->age;
     }
 
-    public function setAge($age)
+    /**
+     * 
+     * @param int $age
+     */
+    public function setAge(int $age)
     {
         if ($age >= 18) {
             $this->age = $age;
@@ -33,17 +50,26 @@ class User {
 
 class Student extends User {
 
-    private $course;
+    private int $course;
 
-    public function setName($name)
+    /**
+     * 
+     * @param string $name
+     * @return void
+     */
+    public function setName(string $name): void
     {
 
-        if (iconv_strlen($name) < 10) {
+        if (mb_strlen($name)) < 10) {
             parent::setName($name);
         }
     }
 
-    public function setAge($age)
+    /**
+     * 
+     * @param int $age
+     */
+    public function setAge(int $age)
     {
         // Если возраст меньше или равен 25:
         if ($age <= 25) {
@@ -52,12 +78,20 @@ class Student extends User {
         }
     }
 
-    public function getCourse()
+    /**
+     * 
+     * @return int
+     */
+    public function getCourse(): int
     {
         return $this->course;
     }
 
-    public function setCourse($course)
+    /**
+     * 
+     * @param int $course
+     */
+    public function setCourse(int $course)
     {
         $this->course = $course;
     }
