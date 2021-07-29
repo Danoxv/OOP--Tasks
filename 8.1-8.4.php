@@ -10,10 +10,11 @@ class Employee {
     {
         $this->name = $name;
     }
-/**
- * 
- * @return string
- */
+
+    /**
+     * 
+     * @return string
+     */
     public function getName(): string
     {
         return $this->name;
@@ -24,42 +25,46 @@ class Employee {
      * @param type $age
      * @return void
      */
-    public function setAge( int $age): void
+    public function setAge(int $age): void
     {
         if ($this->isAgeCorrect($age)) {
             $this->age = $age;
         }
     }
-/**
- * 
- * @return int
- */
+
+    /**
+     * 
+     * @return int
+     */
     public function getAge(): int
     {
         return $this->age;
     }
-/**
- * 
- * @param int $salary
- * @return string
- */
+
+    /**
+     * 
+     * @param int $salary
+     * @return string
+     */
     public function setSalary(int $salary): string
     {
         $this->salary = $salary . '$';
     }
-/**
- * 
- * @return int
- */
+
+    /**
+     * 
+     * @return int
+     */
     public function getSalary(): int
     {
         return $this->salary;
     }
-/**
- * 
- * @param int $age
- * @return bool
- */
+
+    /**
+     * 
+     * @param int $age
+     * @return bool
+     */
     private function isAgeCorrect(int $age): bool
     {
         return $age >= 1 && $age <= 100;
