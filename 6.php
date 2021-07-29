@@ -6,8 +6,8 @@
 
 // Задача 6.3
 // Сделайте класс Student со свойствами $name и $course (курс студента, от 1-го до 5-го).
-class Student
-{
+class Student {
+
     private string $name;
     private int $course;
 
@@ -30,4 +30,7 @@ class Student
     {
         return $course <= 5;
     }
+
 }
+
+?>
