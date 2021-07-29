@@ -1,33 +1,57 @@
 <?php
 
+//Задача 12.1
+//Не подсматривая в мой код реализуйте такой же класс Student.
+
 class Student {
 
-    public $name;
-    public $course;
+    public string $name;
+    public int $course;
 
-    public function __construct($name)
+    /**
+     * 
+     * @param string $name
+     */
+    public function __construct(string $name)
     {
         $this->name = $name;
         $this->course = 1;
     }
 
-    public function getName()
+    /**
+     * 
+     * @return string
+     */
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getCourse()
+    /**
+     * 
+     * @return int
+     */
+    public function getCourse(): int
     {
         return $this->course;
     }
 
-    public function transferToNextCourse()
+    /**
+     * 
+     * @return void
+     */
+    public function transferToNextCourse(): void
     {
-        if ($this->course >= 5) {
-            $this->course = 4;
-        } else {
-            $this->course++;
+        // Задача 12.2
+        // Модифицируйте метод transferToNextCourse так, чтобы при переводе на новый курс выполнялась проверка того,
+        // что новый курс не будет больше 5.
+        $nextCourse = $this->course + 1;
+
+        if ($nextCourse > 5) {
+            return;
         }
+
+        $this->course = $nextCourse;
     }
 
 }
