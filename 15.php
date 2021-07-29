@@ -22,6 +22,9 @@ class User {
     }
 
 }
+//Задача 15.1
+//Пусть массив $methods будет ассоциативным с ключами method1 и method2:
+//Выведите имя и возраст пользователя с помощью этого массива.
 
 $user = new User('Коля', 21);
 $methods = ['method1' => 'getName', 'method2' => 'getAge'];
