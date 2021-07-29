@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Обращение к методам через $this
  * http://code.mu/ru/php/book/oop/methods-and-this/
@@ -6,8 +7,8 @@
 
 // Задача 5.1
 // Не подсматривая в мой код создайте такой же класс User с такими же методами.
-class User
-{
+class User {
+
     public string $name;
     public int $age;
 
@@ -42,6 +43,7 @@ class User
     {
         return $age > 18 && $age < 60;
     }
+
 }
 
 // Задача 5.2
