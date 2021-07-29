@@ -1,51 +1,79 @@
 <?php
+
 class Employee {
 
     private string $name;
-    private  int $age;
-    private  int $salary ;
+    private int $age;
+    private int $salary;
 
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->name = $name;
     }
-     public function getName()
+/**
+ * 
+ * @return string
+ */
+    public function getName(): string
     {
         return $this->name;
     }
 
-     public function setAge($age)
+    /**
+     * 
+     * @param type $age
+     * @return void
+     */
+    public function setAge( int $age): void
     {
         if ($this->isAgeCorrect($age)) {
-           $this->age = $age;
+            $this->age = $age;
         }
     }
-     public function getAge()
+/**
+ * 
+ * @return int
+ */
+    public function getAge(): int
     {
         return $this->age;
     }
-
-    public function setSalary($salary)
+/**
+ * 
+ * @param int $salary
+ * @return string
+ */
+    public function setSalary(int $salary): string
     {
-        $this->salary = $salary.'$';
+        $this->salary = $salary . '$';
     }
-     public function getSalary()
+/**
+ * 
+ * @return int
+ */
+    public function getSalary(): int
     {
         return $this->salary;
     }
-
-    private function isAgeCorrect($age)
+/**
+ * 
+ * @param int $age
+ * @return bool
+ */
+    private function isAgeCorrect(int $age): bool
     {
-        return $age>=1 && $age<=100 ;
+        return $age >= 1 && $age <= 100;
     }
+
 }
-    $user = new Employee;
-    $user->setName('pavel1');
-    echo $user->getName();
 
-     $user->setAge('444');
-    echo $user->getAge();
+$user = new Employee;
+$user->setName('pavel1');
+echo $user->getName();
 
-     $user->setSalary("500");
-    echo $user->getSalary();
-    ?>
+$user->setAge('444');
+echo $user->getAge();
+
+$user->setSalary("500");
+echo $user->getSalary();
+?>
