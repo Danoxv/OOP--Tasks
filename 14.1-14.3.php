@@ -1,12 +1,17 @@
 <?php
 
+//Задача 14.1
+//Сделайте класс City (город), в котором будут следующие свойства - name (название),
+//foundation (дата основания), population (население).
+//Создайте объект этого класса.
+
 class City {
 
-    public $name;
-    public $foundation;
-    public $population;
+    public string $name;
+    public DateTime $foundation;
+    public int $population;
 
-    public function __construct($name, $foundation, $population)
+    public function __construct(string $name, DateTime $foundation, int $population)
     {
 
         $this->name = $name;
@@ -16,10 +21,11 @@ class City {
 
 }
 
-$arr = new City('dsfgdf', '12', '23');
+$arr = new City('dsfgdf', '1996-08-03', 23);
 $props = ['name', 'foundation', 'population'];
+
 foreach ($props as $value) {
-    echo $arr->$value;
+    echo $arr->$value . '<br/>';
 }
 
 class User {
