@@ -1,10 +1,10 @@
 <?php 
 class User {
     private static $count = 0;
-    private $name;
+    private string $name;
     
     
-    public function __construct($name )
+    public function __construct(string $name )
     {
         $this->name = $name;
         
