@@ -2,21 +2,28 @@
 
 class Post {
 
-    private $name;
-    private $salary;
+    private string $name;
+    private int $salary;
 
-    public function __construct($name, $salary)
+    public function __construct(string $name, int  $salary)
     {
         $this->name = $name;
         $this->salary = $salary;
     }
-
-    public function getName()
+/**
+ * 
+ * @return string
+ */
+    public function getName():string
     {
         return $this->name;
     }
-
-    public function getSalary()
+/**
+ * 
+ * @return int
+ */
+    public function getSalary():int
+    
     {
         return $this->salary;
     }
@@ -25,11 +32,11 @@ class Post {
 
 class Employee {
 
-    private $name;
-    private $surname;
+    private string $name;
+    private string $surname;
     private $post;
 
-    public function __construct($name, $surname, Post $post)
+    public function __construct(string$name,string $surname, Post $post)
     {
         $this->setName($name);
         $this->setSurname($surname);
@@ -40,8 +47,11 @@ class Employee {
     {
         $this->name = $name;
     }
-
-    public function getName()
+/**
+ * 
+ * @return string
+ */
+    public function getName():string
     {
         return $this->name;
     }
@@ -50,8 +60,11 @@ class Employee {
     {
         $this->surname = $surname;
     }
-
-    public function getSurname()
+/**
+ * 
+ * @return string
+ */
+    public function getSurname():string
     {
         return $this->surname;
     }
